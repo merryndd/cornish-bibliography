@@ -1,0 +1,141 @@
+\documentclass[11pt]{article} % font size is set here for some reason
+
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper}
+
+\usepackage{fontspec} % for some reason i have to use this package
+\setmainfont{TeX Gyre Termes}
+\setmonofont{TeX Gyre Cursor}
+
+\usepackage{csquotes} % allows guillemets
+
+\usepackage{polyglossia} % more concise than babel
+\setdefaultlanguage[variant=british]{english}
+
+\usepackage{setspace} % double spacing in main text but not footnotes
+\doublespacing
+
+
+\usepackage[hidelinks]{hyperref} % adds loads of hyperlinks :D
+
+
+\setlength{\parindent}{0em} % gets rid of paragraph indents
+\setlength{\parskip}{1em} % adds indentation between paragraphs
+
+\usepackage[style=authoryear-ibid,alldates=long,giveninits=true,dashed=false,datelabel=year,datecirca=true,mergedate=maximum,maxbibnames=10,ibidpage=true]{biblatex} % bib doesn't do unicode tho
+
+\renewbibmacro*{volume+number+eid}{ % puts issue number in brackets
+  \printfield{volume}
+  \printfield{number}
+  \setunit{\addcomma\space}
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+\renewbibmacro{in:}{ % gets rid of In for journal articles
+  \ifentrytype{article}
+    {}
+    {\printtext{\bibstring{in}\intitlepunct}}}
+
+\DefineBibliographyStrings{english}{ % changes visited on to accessed
+urlseen={Accessed},
+}
+
+\DeclareFieldFormat[article]{pages}{#1} % gets rid of pp. for journal articles
+\DeclareNameAlias{sortname}{family-given} % stops 2nd author being listed first last
+\renewcommand*{\intitlepunct}{\space} % deletes colon after In
+\AtEveryBibitem{\uspunctuation} % fixes full stop placement
+
+\renewcommand*{\postnotedelim}{\addcolon} % replaces p. in text with colons
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
+\DeclareFieldFormat{origdate}{\mkbibbrackets{#1}} % year first published
+\renewbibmacro*{cite:labeldate+extradate}{%
+  \iffieldundef{origyear}
+    {}
+    {\printorigdate
+     \setunit{\addspace}}%
+  \iffieldundef{labelyear}
+    {}
+    {\printtext[bibhyperref]{\printlabeldateextra}}}
+
+\DeclareCiteCommand{\citeorigyear}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\printfield{origyear}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\renewbibmacro*{date+extradate}{%
+  \iffieldundef{origyear}
+    {}
+    {\printorigdate
+     \setunit{\addspace}}%
+  \iffieldundef{labelyear}
+    {}
+    {\printtext[parens]{%
+       \iflabeldateisdate
+         {\printdateextra}
+         {\printlabeldateextra}}}}
+         
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+      \map[overwrite=false]{
+          \step[fieldsource=year]
+          \step[fieldset=sortyear, origfieldval, final]
+          \step[fieldsource=sortyear, match={c. }, replace={}]
+    }
+  }
+}
+
+\bibliography{bib}
+\nocite{*}
+
+\begin{document}
+
+\section*{Draft bibliography for Cornish}
+
+\printbibliography[title={Introductions and general histories},keyword=gen]
+
+\printbibliography[title={Old Cornish literature},keyword=oc]
+
+\printbibliography[title={Middle Cornish literature},keyword=mc]
+
+\printbibliography[title={Late Cornish literature},keyword=lc]
+
+\printbibliography[title={Revived Cornish literature},keyword=revc]
+
+\printbibliography[title={Linguistic works on traditional Cornish},keyword=tradling]
+
+\printbibliography[title={The decline of Cornish},keyword=decl]
+
+\printbibliography[title={Textbooks, dictionaries, grammars: Unified Cornish/Unified Cornish Revised/Kernowek Standard},keyword=ucmat]
+
+\printbibliography[title={Textbooks, dictionaries, grammars: Kernewek Kemmyn},keyword=kkmat]
+
+\printbibliography[title={Textbooks, dictionaries, grammars: Modern Cornish},keyword=rlcmat]
+
+\printbibliography[title={Textbooks, dictionaries, grammars: SWF},keyword=swfmat]
+
+\printbibliography[title={Textbooks, dictionaries, grammars: Early and other varieties},keyword=altmat]
+
+\printbibliography[title={Spelling/varieties debate 1: Pre-Kernewek Kemmyn},keyword=orth1]
+
+\printbibliography[title={Spelling/varieties debate 2: Post-Kernewek Kemmyn},keyword=orth2]
+
+\printbibliography[title={Spelling/varieties debate 3: The SWF era},keyword=orth3]
+
+\printbibliography[title={Accounts of the early revival},keyword=factrev]
+
+\printbibliography[title={Critical accounts of the later revival and contemporary situation},keyword=critrev2]
+
+\printbibliography[title={Language policy and Cornish in society},keyword=pol]
+
+\printbibliography[title={For popular audiences},keyword=pop]
+
+\printbibliography[title={Cornwall and Brittany},keyword=bret]
+
+\printbibliography[title={A selection of non-language-focused works},keyword=nonling]
+
+\end{document}
