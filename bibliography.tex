@@ -1,28 +1,28 @@
-\documentclass[11pt]{article} % font size is set here for some reason
+\documentclass[11pt]{article}
 
-\usepackage{geometry} % to change the page dimensions
+\usepackage{geometry}
 \geometry{a4paper}
 
-\usepackage{fontspec} % for some reason i have to use this package
+\usepackage{fontspec}
 \setmainfont{TeX Gyre Termes}
 \setmonofont{TeX Gyre Cursor}
 
-\usepackage{csquotes} % allows guillemets
+\usepackage{csquotes}
 
-\usepackage{polyglossia} % more concise than babel
+\usepackage{polyglossia}
 \setdefaultlanguage[variant=british]{english}
 
-\usepackage{setspace} % double spacing in main text but not footnotes
+\usepackage{setspace}
 \doublespacing
 
 
-\usepackage[hidelinks]{hyperref} % adds loads of hyperlinks :D
+\usepackage[hidelinks]{hyperref} % adds loads of hyperlinks 
 
 
-\setlength{\parindent}{0em} % gets rid of paragraph indents
-\setlength{\parskip}{1em} % adds indentation between paragraphs
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
 
-\usepackage[style=authoryear-ibid,alldates=long,giveninits=true,dashed=false,datelabel=year,datecirca=true,mergedate=maximum,maxbibnames=10,ibidpage=true]{biblatex} % bib doesn't do unicode tho
+\usepackage[style=authoryear-ibid,alldates=long,giveninits=true,dashed=false,datelabel=year,datecirca=true,mergedate=maximum,maxbibnames=10,ibidpage=true]{biblatex}
 
 \renewbibmacro*{volume+number+eid}{ % puts issue number in brackets
   \printfield{volume}
@@ -96,46 +96,53 @@ urlseen={Accessed},
 
 \section*{Draft bibliography for Cornish}
 
-\printbibliography[title={Introductions and general histories},keyword=gen]
+\printbibliography[title={Introductions and general histories},keyword=corn:gen]
 
-\printbibliography[title={Old Cornish literature},keyword=oc]
+\printbibliography[title={Old Cornish literature},keyword=corn:oc]
 
-\printbibliography[title={Middle Cornish literature},keyword=mc]
+\printbibliography[title={Middle Cornish literature},keyword=corn:mc]
 
-\printbibliography[title={Late Cornish literature},keyword=lc]
+\printbibliography[title={Late Cornish literature},keyword=corn:lc]
 
-\printbibliography[title={Revived Cornish literature},keyword=revc]
+\printbibliography[title={Revived Cornish literature},keyword=corn:revc]
 
-\printbibliography[title={Linguistic works on traditional Cornish},keyword=tradling]
+\printbibliography[title={Linguistic works on traditional Cornish},keyword=corn:tradling]
 
-\printbibliography[title={The decline of Cornish},keyword=decl]
+\printbibliography[title={The decline of Cornish},keyword=corn:decl]
 
-\printbibliography[title={Textbooks, dictionaries, grammars: Unified Cornish/Unified Cornish Revised/Kernowek Standard},keyword=ucmat]
+\printbibliography[title={Textbooks, dictionaries, grammars: Unified Cornish/Unified Cornish Revised/Kernowek Standard},keyword=corn:ucmat]
 
-\printbibliography[title={Textbooks, dictionaries, grammars: Kernewek Kemmyn},keyword=kkmat]
+\printbibliography[title={Textbooks, dictionaries, grammars: Kernewek Kemmyn},keyword=corn:kkmat]
 
-\printbibliography[title={Textbooks, dictionaries, grammars: Modern Cornish},keyword=rlcmat]
+\printbibliography[title={Textbooks, dictionaries, grammars: Modern Cornish},keyword=corn:rlcmat]
 
-\printbibliography[title={Textbooks, dictionaries, grammars: SWF},keyword=swfmat]
+\printbibliography[title={Textbooks, dictionaries, grammars: SWF},keyword=corn:swfmat]
 
-\printbibliography[title={Textbooks, dictionaries, grammars: Early and other varieties},keyword=altmat]
+\printbibliography[title={Textbooks, dictionaries, grammars: Early and other varieties},keyword=corn:altmat]
 
-\printbibliography[title={Spelling/varieties debate 1: Pre-Kernewek Kemmyn},keyword=orth1]
+\printbibliography[title={Spelling/varieties debate 1: Pre-Kernewek Kemmyn},keyword=corn:orth1]
 
-\printbibliography[title={Spelling/varieties debate 2: Post-Kernewek Kemmyn},keyword=orth2]
+\printbibliography[title={Spelling/varieties debate 2: Post-Kernewek Kemmyn},keyword=corn:orth2]
 
-\printbibliography[title={Spelling/varieties debate 3: The SWF era},keyword=orth3]
+\printbibliography[title={Spelling/varieties debate 3: The SWF era},keyword=corn:orth3]
 
-\printbibliography[title={Accounts of the early revival},keyword=factrev]
+\printbibliography[title={Accounts of the early revival},keyword=corn:factrev]
 
-\printbibliography[title={Critical accounts of the later revival and contemporary situation},keyword=critrev2]
+\printbibliography[title={Critical accounts of the later revival and contemporary situation},keyword=corn:critrev2]
 
-\printbibliography[title={Language policy and Cornish in society},keyword=pol]
+\printbibliography[title={Language policy and Cornish in
+  society},keyword=corn:pol]
 
-\printbibliography[title={For popular audiences},keyword=pop]
+\printbibliography[title={Language technology},keyword=corn:tech]
 
-\printbibliography[title={Cornwall and Brittany},keyword=bret]
+\printbibliography[title={For popular audiences},keyword=corn:pop]
 
-\printbibliography[title={A selection of non-language-focused works},keyword=nonling]
+\printbibliography[title={Cornwall and Brittany},keyword=corn:bret]
+
+\printbibliography[title={A selection of non-language-focused works},keyword=corn:nonling]
 
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
