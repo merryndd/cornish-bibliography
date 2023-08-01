@@ -6,4 +6,5 @@
 *.out
 *.run.xml
 *.synctex.gz
+*.toc
 auto/
