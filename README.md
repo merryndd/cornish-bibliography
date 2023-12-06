@@ -1,3 +1,5 @@
-Bibliography for Cornish (BibLaTeX)
+# MOVED
 
-Requires [TeX Gyre Termes and TeX Gyre Cursor](https://ctan.org/pkg/tex-gyre?lang=en).
+I’ve moved this to a self-hosted Git server – it can now be found [here](https://git.praze.net/mdd/cornish-bibliography).
+
+To view the PDF directly, click [here](https://git.praze.net/mdd/cornish-bibliography/src/branch/master/bibliography.pdf).
